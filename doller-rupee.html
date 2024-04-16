@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <label for="doller">Enter the dollar value</label>
+        <input type="number" id="dollarInput" placeholder="Dollar value" autocomplete="off" step="0.1">
+        <button onclick="convertToRupees()">Submit</button>
+   </div>
+
+   <div id="result"></div>
+
+   
+    <script>
+       function convertToRupees() {
+           const dollarValue = document.getElementById('dollarInput').value;
+           const rupeeValue = dollarValue * 83.61; 
+           document.getElementById('result').innerHTML = "Amount in Rupees: ₹ "+rupeeValue.toFixed(2);
+       }
+   </script> 
+</body>
+
+</html>

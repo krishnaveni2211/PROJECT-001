@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Calendar</title>
+<style>
+    .calendar {
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+    }
+    .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+    .day { text-align: center; padding: 5px; border: 1px solid #ccc; border-radius: 3px; }
+    .today { background-color: lightblue; }
+</style>
+</head>
+<body>
+<div class="calendar" id="calendar"></div>
+<script>
+    const calendarDiv = document.getElementById('calendar');
+    const currentDate = new Date();
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+    let html = `<div class="days">${daysOfWeek.map(day => `<div class="day">${day}</div>`).join('')}`;
+    for (let i = 0; i < firstDayOfMonth; i++) html += `<div class="day"></div>`;
+    for (let i = 1; i <= daysInMonth; i++) html += `<div class="day${(new Date(currentYear, currentMonth, i).toDateString() === currentDate.toDateString()) ? ' today' : ''}">${i}</div>`;
+    calendarDiv.innerHTML = `${html}</div>`;
+</script>
+</body>
+</html>

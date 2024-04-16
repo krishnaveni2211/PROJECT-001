@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALTHY-FOOD</title>
+    <style>
+        .container input{
+            margin: 10px;
+            /* padding: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <h2>HEALTHY INTAKE -HEALTHY LIFE</h2>
+    <div class="container">
+          <label for="text">Daily intake of Protein</label>
+          <input type="text" placeholder="value" autocomplete="off" id="Protein"> <br>
+
+          <label for="text">Daily intake of cholesterol</label>
+          <input type="text" id="cholesterol" placeholder="value" autocomplete="off"><br>
+
+          <label for="text">Daily intake of Carbohydrates</label>
+          <input type="text" id="Carbohydrates" placeholder="value" autocomplete="off"><br>
+
+          <label for="text">Daily intake of Vitamins</label>
+          <input type="text" id="Vitamins" placeholder="value" autocomplete="off"> <br>
+
+          <button onclick="trackWellness()">submit</button>
+
+          <div id="Result"></div>
+    </div>
+   
+
+
+    <script>
+        function trackWellness(){
+           const ProteinLevel=parseFloat(document.getElementById('Protein').value);
+           const CholesterolLevel=parseFloat(document.getElementById('cholesterol').value);
+           const CarbohydratesLevel=parseFloat(document.getElementById('Carbohydrates').value);
+           const VitaminsLevel=parseFloat(document.getElementById('Vitamins').value);
+
+        
+        const  trackWellness=(ProteinLevel/30)+(CholesterolLevel/20)+(CarbohydratesLevel/30)+(VitaminsLevel/20)/4;
+
+        document.getElementById('Result').innerHTML = `Wellness Score: ${trackWellness.toFixed(2)}`;
+        }
+    
+
+    
+           
+
+    </script>
+
+</body>
+</html>

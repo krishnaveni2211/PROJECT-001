@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>value:<span id="value"></span></h2>
+    <button onclick="increment()">+</button>
+    <button onclick="decrement()">-</button>
+    <button onclick="reset()">Reset</button>
+
+
+    <script>
+         let value=0;
+        document.getElementById('value').textContent=value;
+
+        function increment(){
+        value++;
+         document.getElementById('value').textContent=value;
+
+        }
+        function decrement(){
+            value--;
+                   document.getElementById('value').textContent=value;
+
+        }
+        function reset(){
+            value=0;
+                    document.getElementById('value').textContent=value;
+
+        }
+    </script>
+</body>
+
+</html>
+
